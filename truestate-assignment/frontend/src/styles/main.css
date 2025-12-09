@@ -1,0 +1,405 @@
+/* GLOBAL */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: #111827;
+}
+
+.app-shell {
+  display: flex;
+  height: 100vh;
+  color: #111827;
+}
+
+/* ---------- SIDEBAR (Figma-style) ---------- */
+
+/* ---------- MINIMAL WHITE SIDEBAR ---------- */
+
+.sidebar {
+  width: 260px;
+  background: #f1f3f5; /* soft grey behind cards */
+  display: flex;
+  flex-direction: column;
+  padding: 16px 12px;
+  gap: 14px;
+}
+
+/* top app card */
+.sidebar-header-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebar-header-main {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar-logo-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #1e293b; /* dark grey (minimal), not blue */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.sidebar-header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-app-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.sidebar-user-name {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.sidebar-header-chevron {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/* section label */
+.sidebar-section-label {
+  font-size: 12px;
+  color: #6b7280;
+  margin-left: 4px;
+  margin-bottom: -6px;
+}
+
+/* card wrapper */
+.sidebar-section-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 6px 6px;
+}
+
+/* buttons */
+.sidebar-item {
+  width: 100%;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #111827;
+  padding: 7px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.sidebar-item + .sidebar-item {
+  margin-top: 3px;
+}
+
+/* hover (minimal soft grey) */
+.sidebar-item:hover {
+  background: #f3f4f6;
+}
+
+/* active (subtle, NOT blue) */
+.sidebar-item-active {
+  background: #e7e9eb;
+  font-weight: 500;
+}
+
+.sidebar-item-active-secondary {
+  background: #f0f1f2;
+}
+
+.sidebar-item-icon {
+  font-size: 14px;
+}
+
+.sidebar-dot-icon {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #d1d5db;
+  display: inline-block;
+}
+
+.sidebar-item-label {
+  flex: 1;
+}
+
+
+/* primary active (Dashboard) */
+.sidebar-item-active {
+  background: #2563eb;
+  color: #f9fafb;
+}
+
+/* secondary active (Proforma Invoices) */
+.sidebar-item-active-secondary {
+  background: #e0ebff;
+}
+
+/* icon styles */
+.sidebar-item-icon {
+  font-size: 14px;
+}
+
+/* circular dot icon for services */
+.sidebar-dot-icon {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  border: 1.5px solid #9ca3af;
+  display: inline-block;
+}
+
+/* label text */
+.sidebar-item-label {
+  flex: 1;
+  text-align: left;
+}
+
+
+/* MAIN AREA */
+.main-area {
+  flex: 1;
+  background: #e5e7eb;
+  display: flex;
+  flex-direction: column;
+}
+
+/* header */
+.main-header {
+  padding: 12px 24px;
+  border-bottom: 1px solid #d1d5db;
+  background: white;
+}
+
+.main-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.main-subtitle {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* toolbar: filters + search + sort */
+.toolbar {
+  padding: 8px 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+  background: #f3f4f6;
+  border-bottom: 1px solid #d1d5db;
+}
+
+.toolbar-left {
+  flex: 1;
+}
+
+.toolbar-right {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* filters row */
+.filters-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* use <details> as pill */
+.filter-pill {
+  position: relative;
+  background: white;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  font-size: 11px;
+  min-width: 140px;
+}
+
+/* remove default triangle icon of <details> */
+.filter-pill summary::-webkit-details-marker {
+  display: none;
+}
+
+.filter-pill summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+.filter-label {
+  color: #6b7280;
+}
+
+.filter-value {
+  font-weight: 500;
+}
+
+/* dropdown content */
+.filter-dropdown {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  z-index: 20;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  padding: 8px;
+  margin-top: 4px;
+  display: none;
+  min-width: 180px;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.2);
+}
+
+/* show dropdown when details is open */
+.filter-pill[open] .filter-dropdown {
+  display: block;
+}
+
+.filter-dropdown label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.filter-age input,
+.filter-date input {
+  width: 100%;
+  font-size: 12px;
+  padding: 4px 6px;
+  margin-bottom: 4px;
+}
+
+
+/* search box */
+.search-box input {
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  font-size: 12px;
+  min-width: 220px;
+}
+
+/* sort dropdown */
+.sort select {
+  padding: 6px 8px;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  font-size: 12px;
+}
+
+/* metrics row */
+.metrics-row {
+  display: flex;
+  gap: 12px;
+  padding: 10px 24px;
+}
+
+.metric-card {
+  background: white;
+  border-radius: 8px;
+  padding: 8px 10px;
+  min-width: 180px;
+  border: 1px solid #e5e7eb;
+}
+
+.metric-label {
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.metric-value {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.metric-extra {
+  font-size: 11px;
+  color: #22c55e;
+}
+
+/* table card */
+.table-card {
+  margin: 8px 24px 16px;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  padding: 8px 0 12px;
+  overflow: hidden;
+}
+
+/* table styles */
+.transactions-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.transactions-table thead {
+  background: #f9fafb;
+}
+
+.transactions-table th,
+.transactions-table td {
+  padding: 8px 16px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.transactions-table tbody tr:hover {
+  background: #f3f4f6;
+}
+
+/* pagination */
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px 0;
+  font-size: 12px;
+}
+
+.pagination button {
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: white;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
